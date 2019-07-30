@@ -1,8 +1,14 @@
-local KEYWORDS = {}
-
-for a in next, getfenv() do
-	KEYWORDS[a] = true
-end
+local KEYWORDS = {
+	["pairs"] = true,
+	["print"] = true,
+	["warn"] = true,
+	["error"] = true,
+	["next"] = true,
+	["ipairs"] = true,
+	["math"] = true,
+	["table"] = true,
+	["string"] = true,
+}
 
 local DATATYPE = {
 	["false"] = "boolean",
@@ -17,8 +23,15 @@ local EXPRESSIONS = {
 	['"'] = true,
 	["'"] = true,
 	["="] = true,
+	[","] = true,
+	[";"] = true,
 
 	["local"] = true,
+	["do"] = true,
+	["end"] = true,
+	["__newindex"] = true,
+	["__index"] = true,
+	["function"] = true,
 
 	[" "] = true,
 	["	"] = true,
